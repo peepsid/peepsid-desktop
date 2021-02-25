@@ -1,12 +1,12 @@
 {
-  "name": "scatter",
-  "version": "12.1.1",
+  "name": "peepsid",
+  "version": "1.0.0",
   "private": true,
-  "buttonText": "Scatter Desktop Companion",
+  "buttonText": "PeepsID Desktop",
   "author": {
-    "name": "GetScatter",
-    "email": "support@get-scatter.com",
-    "url": "https://get-scatter.com/"
+    "name": "PeepsLabs",
+    "email": "support@get-peepsid.com",
+    "url": "https://peepsid.com/"
   },
   "scripts": {
     "install-deps": "electron-builder install-app-deps",
@@ -18,12 +18,12 @@
   "dependencies": {
     "@ledgerhq/hw-app-eth": "^4.68.4",
     "@ledgerhq/hw-transport-node-hid": "^4.78.0",
-    "@walletpack/bitcoin": "^1.0.51",
-    "@walletpack/core": "^1.0.46",
-    "@walletpack/eosio": "^0.0.58",
-    "@walletpack/ethereum": "^0.0.56",
-    "@walletpack/fio": "^0.0.23",
-    "@walletpack/tron": "^0.0.59",
+    "@dwalletjs/bitcoin": "^1.0.0",
+    "@dwalletjs/core": "^1.0.0",
+    "@dwalletjs/arisen": "^1.0.0",
+    "@dwalletjs/ethereum": "^1.0.0",
+    "@dwalletjs/fio": "^1.0.0",
+    "@dwalletjs/tron": "^1.0.0",
     "aes-oop": "^1.0.4",
     "asn1-ber": "^1.0.9",
     "bip32-path": "^0.4.2",
@@ -32,9 +32,9 @@
     "dotenv": "^8.1.0",
     "electron-store": "^3.2.0",
     "elliptic": "^6.5.1",
-    "embedder": "git+https://git@github.com/GetScatter/Scatter-Embedder.git#master",
-    "eosjs": "^20.0.0",
-    "eosjs-ecc": "^4.0.7",
+    "@peepsid/embedder": "^1.0.0",
+    "arisensdk": "^1.0.0",
+    "@arisensdk/ecc": "^1.0.0",
     "ethereumjs-tx": "^2.1.0",
     "isomorphic-fetch": "^2.2.1",
     "mini-css-extract-plugin": "^0.8.0",
@@ -60,7 +60,7 @@
     "**/lodash": "^4.13.1",
     "**/mixin-deep": "^2.0.1",
     "**/set-value": "^3.0.1",
-    "**/eosjs-ecc": "4.0.7"
+    "**/@arisensdk/ecc": "1.0.0"
   },
   "browserslist": [
     "> 1%",
@@ -68,11 +68,11 @@
     "not ie <= 8"
   ],
   "bugs": {
-    "url": "https://github.com/GetScatter/ScatterDesktop/issues"
+    "url": "https://github.com/peepsid/ScatterDesktop/issues"
   },
   "build": {
-    "productName": "scatter",
-    "appId": "com.get-scatter.server",
+    "productName": "peepsid",
+    "appId": "com.peepsid.peeps",
     "afterSign": "macos/notarize.js",
     "artifactName": "${os}-${productName}-${version}-${arch}.${ext}",
     "asar": true,
@@ -82,7 +82,7 @@
     "protocols": {
       "name": "electron-deep-linking",
       "schemes": [
-        "scatter"
+        "peepsid"
       ]
     },
     "files": [
@@ -101,7 +101,7 @@
       "oneClick": false,
       "createDesktopShortcut": "always",
       "createStartMenuShortcut": true,
-      "shortcutName": "Scatter"
+      "shortcutName": "PeepsID"
     },
     "directories": {
       "buildResources": "build",
@@ -140,15 +140,15 @@
           ]
         }
       ],
-      "certificateSubjectName": "GetScatter Ltd."
+      "certificateSubjectName": "Peeps"
     },
     "linux": {
       "category": "Network",
       "desktop": {
-        "Name": "Scatter",
-        "GenericName": "Scatter Desktop",
-        "X-GNOME-FullName": "scatter",
-        "Comment": "Scatter desktop signature server.",
+        "Name": "PeepsID",
+        "GenericName": "PeepsID Desktop",
+        "X-GNOME-FullName": "peepsid",
+        "Comment": "PeepsID desktop authenticator.",
         "Type": "Application",
         "Terminal": "false",
         "StartupNotify": "false",
@@ -162,18 +162,18 @@
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
   },
-  "homepage": "https://get-scatter.com",
+  "homepage": "https://peepsid.com",
   "keywords": [
-    "scatter",
+    "peepsid",
     "blockchain",
     "signatures",
-    "eos",
+    "arisen",
     "ethereum"
   ],
   "license": "MIT",
   "main": "electron.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GetScatter/ScatterDesktop.git"
+    "url": "git+https://github.com/peepsid/ScatterDesktop.git"
   }
 }
